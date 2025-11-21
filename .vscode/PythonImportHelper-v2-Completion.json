@@ -166,22 +166,6 @@
         "documentation": {}
     },
     {
-        "label": "variant_validate",
-        "importPath": "src.utils",
-        "description": "src.utils",
-        "isExtraImport": true,
-        "detail": "src.utils",
-        "documentation": {}
-    },
-    {
-        "label": "invalid_variant_handler",
-        "importPath": "src.utils",
-        "description": "src.utils",
-        "isExtraImport": true,
-        "detail": "src.utils",
-        "documentation": {}
-    },
-    {
         "label": "app_cli",
         "importPath": "src.cli",
         "description": "src.cli",
@@ -203,22 +187,6 @@
         "description": "src.cli",
         "isExtraImport": true,
         "detail": "src.cli",
-        "documentation": {}
-    },
-    {
-        "label": "app_cli",
-        "importPath": "src.cli",
-        "description": "src.cli",
-        "isExtraImport": true,
-        "detail": "src.cli",
-        "documentation": {}
-    },
-    {
-        "label": "check_internet_connection",
-        "importPath": "src.funcs",
-        "description": "src.funcs",
-        "isExtraImport": true,
-        "detail": "src.funcs",
         "documentation": {}
     },
     {
@@ -238,39 +206,67 @@
         "documentation": {}
     },
     {
-        "label": "socket",
-        "kind": 6,
+        "label": "check_internet_connection",
+        "importPath": "src.funcs",
+        "description": "src.funcs",
         "isExtraImport": true,
-        "importPath": "socket",
-        "description": "socket",
-        "detail": "socket",
+        "detail": "src.funcs",
         "documentation": {}
     },
     {
-        "label": "psutil",
-        "kind": 6,
+        "label": "check_work_antivirus",
+        "importPath": "src.funcs",
+        "description": "src.funcs",
         "isExtraImport": true,
-        "importPath": "psutil",
-        "description": "psutil",
-        "detail": "psutil",
+        "detail": "src.funcs",
         "documentation": {}
     },
     {
-        "label": "shutil",
-        "kind": 6,
+        "label": "check_work_firewall",
+        "importPath": "src.funcs",
+        "description": "src.funcs",
         "isExtraImport": true,
-        "importPath": "shutil",
-        "description": "shutil",
-        "detail": "shutil",
+        "detail": "src.funcs",
         "documentation": {}
     },
     {
-        "label": "platform",
-        "kind": 6,
+        "label": "invalid_variant_handler",
+        "importPath": "src.utils",
+        "description": "src.utils",
         "isExtraImport": true,
-        "importPath": "platform",
-        "description": "platform",
-        "detail": "platform",
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "variant_validate",
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "isExtraImport": true,
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "RETURN_TIME",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "ANTIVIRUS_LIST",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "EICAR_STRING",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
         "documentation": {}
     },
     {
@@ -298,7 +294,7 @@
         "documentation": {}
     },
     {
-        "label": "ANTIVIRUS_LIST",
+        "label": "WINDOWS_FIREWALL_PROFILES_RUS_ENG",
         "importPath": "src.const",
         "description": "src.const",
         "isExtraImport": true,
@@ -314,7 +310,7 @@
         "documentation": {}
     },
     {
-        "label": "WINDOWS_FIREWALL_PROFILES_RUS_ENG",
+        "label": "URL_FOR_CHECK_WORK_FIREWALL",
         "importPath": "src.const",
         "description": "src.const",
         "isExtraImport": true,
@@ -327,6 +323,67 @@
         "description": "src.const",
         "isExtraImport": true,
         "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "get",
+        "importPath": "requests",
+        "description": "requests",
+        "isExtraImport": true,
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "RequestException",
+        "importPath": "requests",
+        "description": "requests",
+        "isExtraImport": true,
+        "detail": "requests",
         "documentation": {}
     },
     {
@@ -657,8 +714,89 @@
         "kind": 2,
         "importPath": "src.cli",
         "description": "src.cli",
-        "peekOfCode": "def app_cli():\n    print(\"1 --- Проверка наличия подключения к интернету\")\n    print(\"2 --- Проверка наличия установленного межсетвоего экрана\")\n    print(\"3 --- Проверка работоспособности межсетевого экрана\")\n    print(\"4 --- Проверка наличия установленного антивирусного ПО\")\n    print(\"5 --- Проверка наличия работоспособности антивирусного ПО\")\n    print(\"0 --- Выход из программы\")",
+        "peekOfCode": "def app_cli():\n    print(\"1 --- Проверка наличия подключения к интернету\")\n    print(\"2 --- Проверка наличия установленного межсетвоего экрана\")\n    print(\"3 --- Проверка работоспособности межсетевого экрана\")\n    print(\"4 --- Проверка наличия установленного антивирусного ПО\")\n    print(\"5 --- Проверка наличия работоспособности антивирусного ПО\")\n    print(\"6 --- Результаты работы программы\")\n    print(\"0 --- Выход из программы\")",
         "detail": "src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "VARIANTS",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "VARIANTS = [1, 2, 3, 4, 5, 0]\nGOOGLE_SERVER_ADDRESS = \"8.8.8.8\"\nPORT = 53\nRETURN_TIME = 1  ## Задержка после выполнения некоторых функций\nANTIVIRUS_LIST = [\n    \"avast\",\n    \"avg\",\n    \"kaspersky\",\n    \"mcafee\",\n    \"defender\",",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "GOOGLE_SERVER_ADDRESS",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "GOOGLE_SERVER_ADDRESS = \"8.8.8.8\"\nPORT = 53\nRETURN_TIME = 1  ## Задержка после выполнения некоторых функций\nANTIVIRUS_LIST = [\n    \"avast\",\n    \"avg\",\n    \"kaspersky\",\n    \"mcafee\",\n    \"defender\",\n    \"bitdefender\",",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "PORT = 53\nRETURN_TIME = 1  ## Задержка после выполнения некоторых функций\nANTIVIRUS_LIST = [\n    \"avast\",\n    \"avg\",\n    \"kaspersky\",\n    \"mcafee\",\n    \"defender\",\n    \"bitdefender\",\n    \"360se\",",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "RETURN_TIME",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "RETURN_TIME = 1  ## Задержка после выполнения некоторых функций\nANTIVIRUS_LIST = [\n    \"avast\",\n    \"avg\",\n    \"kaspersky\",\n    \"mcafee\",\n    \"defender\",\n    \"bitdefender\",\n    \"360se\",\n    \"norton\",",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "ANTIVIRUS_LIST",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "ANTIVIRUS_LIST = [\n    \"avast\",\n    \"avg\",\n    \"kaspersky\",\n    \"mcafee\",\n    \"defender\",\n    \"bitdefender\",\n    \"360se\",\n    \"norton\",\n    \"nis\",",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "WMI_NAMESPACE",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "WMI_NAMESPACE = \"root\\SecurityCenter2\"\nWINDOWS_FIREWALL_PROFILES_RUS_ENG = [\n    \"профиль домена\",\n    \"domainprofile\",\n    \"частный профиль\",\n    \"privateprofile\",\n    \"публичный профиль\",\n    \"publicprofile\",\n]\nEICAR_STRING = \"X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*\"",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "WINDOWS_FIREWALL_PROFILES_RUS_ENG",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "WINDOWS_FIREWALL_PROFILES_RUS_ENG = [\n    \"профиль домена\",\n    \"domainprofile\",\n    \"частный профиль\",\n    \"privateprofile\",\n    \"публичный профиль\",\n    \"publicprofile\",\n]\nEICAR_STRING = \"X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*\"\nURL_FOR_CHECK_WORK_FIREWALL = \"https://bolshoi.ru/\"",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "EICAR_STRING",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "EICAR_STRING = \"X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*\"\nURL_FOR_CHECK_WORK_FIREWALL = \"https://bolshoi.ru/\"",
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "URL_FOR_CHECK_WORK_FIREWALL",
+        "kind": 5,
+        "importPath": "src.const",
+        "description": "src.const",
+        "peekOfCode": "URL_FOR_CHECK_WORK_FIREWALL = \"https://bolshoi.ru/\"",
+        "detail": "src.const",
         "documentation": {}
     },
     {
@@ -666,7 +804,7 @@
         "kind": 2,
         "importPath": "src.decision_handler",
         "description": "src.decision_handler",
-        "peekOfCode": "def decision_handler(variant: int) -> None:\n    if not variant_validate:\n        invalid_variant_handler()\n        return\n    match variant:\n        case 0:\n            exit(0)\n        case 1:\n            check_internet_connection()\n            app_cli()",
+        "peekOfCode": "def decision_handler(variant: int) -> None:\n    check_results = \"\" ## TODO: Сохранение сюда всех результатов и вывод их.\n    if not variant_validate:\n        invalid_variant_handler()\n        return\n    match variant:\n        case 0:\n            exit(0)\n        case 1:\n            check_internet_connection()",
         "detail": "src.decision_handler",
         "documentation": {}
     },
@@ -675,7 +813,7 @@
         "kind": 2,
         "importPath": "src.funcs",
         "description": "src.funcs",
-        "peekOfCode": "def check_internet_connection() -> None:\n    conn_data = (GOOGLE_SERVER_ADDRESS, PORT)\n    try:\n        socket.create_connection(conn_data, timeout=3)\n        print(\"Подлючение к интернету установлено\")\n    except OSError: ## Ошибки, связанные с веб-взаимодействием\n        print(\"Подключение к интернету отсутствует\")\n    finally:\n        time.sleep(RETURN_TIME)\n    return",
+        "peekOfCode": "def check_internet_connection() -> None:\n    conn_data = (GOOGLE_SERVER_ADDRESS, PORT)\n    try:\n        socket.create_connection(conn_data, timeout=3)\n        print(\"Подлючение к интернету установлено\")\n    except OSError:  ## Ошибки, связанные с веб-взаимодействием\n        print(\"Подключение к интернету отсутствует\")\n    finally:\n        time.sleep(RETURN_TIME)\n    return",
         "detail": "src.funcs",
         "documentation": {}
     },
@@ -684,7 +822,7 @@
         "kind": 2,
         "importPath": "src.funcs",
         "description": "src.funcs",
-        "peekOfCode": "def check_installed_antivirus() -> None:\n    ## Случай 1. Антивирус -- активный процесс\n    for process in psutil.process_iter([\"name\"]):\n        name = process.info[\"name\"].lower()\n        if any(av_process_name_part in name for av_process_name_part in ANTIVIRUS_LIST):\n            print(f\"Антивирус {process.info[\"name\"]} установлен и находится во включенном состоянии\")\n            time.sleep(RETURN_TIME)\n            return\n    ## Случай 2. Антивирус не включён. Проверка на нахождение в системе\n    if platform.system() == \"Windows\":",
+        "peekOfCode": "def check_installed_antivirus() -> None:\n    ## Случай 1. Антивирус -- активный процесс\n    for process in psutil.process_iter([\"name\"]):\n        name = process.info[\"name\"].lower()\n        if any(av_process_name_part in name for av_process_name_part in ANTIVIRUS_LIST):\n            print(\n                f\"Антивирус {process.info[\"name\"]} установлен и находится во включенном состоянии\"\n            )\n            time.sleep(RETURN_TIME)\n            return",
         "detail": "src.funcs",
         "documentation": {}
     },
@@ -693,8 +831,35 @@
         "kind": 2,
         "importPath": "src.funcs",
         "description": "src.funcs",
-        "peekOfCode": "def check_installed_firewall() -> None:\n    if platform.system() == \"Windows\":\n        try:\n            res = subprocess.run(\n                [\"netsh\", \"advfirewall\", \"show\", \"allprofiles\"],\n                capture_output=True,\n                text=True\n            )\n            output = res.stdout.lower()\n            if any(profile in output for profile in WINDOWS_FIREWALL_PROFILES_RUS_ENG):",
+        "peekOfCode": "def check_installed_firewall() -> None:\n    if platform.system() == \"Windows\":\n        try:\n            res = subprocess.run(\n                [\"netsh\", \"advfirewall\", \"show\", \"allprofiles\"],\n                capture_output=True,\n                text=True,\n            )\n            output = res.stdout.lower()\n            if any(profile in output for profile in WINDOWS_FIREWALL_PROFILES_RUS_ENG):",
         "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "check_work_antivirus",
+        "kind": 2,
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "peekOfCode": "def check_work_antivirus(before_check: int = 3) -> None:\n    test_file = os.path.join(tempfile.gettempdir(), \"test_file.txt\")\n    with open(test_file, \"w\") as file:\n        file.write(EICAR_STRING)\n    time.sleep(before_check)\n    if not os.path.exists(test_file):\n        print(\"Антивирус работает корректно\")\n        time.sleep(RETURN_TIME)\n        return\n    os.remove(test_file)",
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "check_work_firewall",
+        "kind": 2,
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "peekOfCode": "def check_work_firewall() -> None:\n    try:\n        r = GET(URL_FOR_CHECK_WORK_FIREWALL)\n        if 200 <= r.status_code < 300:\n            print(\"Файервол не работает (ресурс доступен)\")\n    except RequestException:\n        print(\"Файервол работает (доступ к ресурсу заблокирован)\")\n    time.sleep(RETURN_TIME)",
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "print_results",
+        "kind": 2,
+        "importPath": "src.print_results",
+        "description": "src.print_results",
+        "peekOfCode": "def print_results(save_to_file: bool = False):\n    ...",
+        "detail": "src.print_results",
         "documentation": {}
     },
     {
