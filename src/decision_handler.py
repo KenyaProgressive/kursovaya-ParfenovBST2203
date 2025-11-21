@@ -2,7 +2,8 @@ from src.utils import variant_validate
 from src.utils import invalid_variant_handler
 from src.cli import app_cli
 from src.funcs import (
-    check_internet_connection
+    check_internet_connection,
+    check_installed_antivirus
 )
 
 def decision_handler(variant: int) -> None:
@@ -14,8 +15,10 @@ def decision_handler(variant: int) -> None:
             exit(0)
         case 1:
             check_internet_connection()
+            app_cli()
         case 2:
-            ...
+            check_installed_antivirus()
+            app_cli()
         case 3:
             ...
         case 4:
@@ -23,4 +26,4 @@ def decision_handler(variant: int) -> None:
         case 5:
             ...
         case _:
-            app_cli()
+            invalid_variant_handler()
