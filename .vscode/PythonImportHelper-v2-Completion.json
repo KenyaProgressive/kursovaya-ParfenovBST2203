@@ -1,0 +1,180 @@
+[
+    {
+        "label": "variant_validate",
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "isExtraImport": true,
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "invalid_variant_handler",
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "isExtraImport": true,
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "app_cli",
+        "importPath": "src.cli",
+        "description": "src.cli",
+        "isExtraImport": true,
+        "detail": "src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app_cli",
+        "importPath": "src.cli",
+        "description": "src.cli",
+        "isExtraImport": true,
+        "detail": "src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app_cli",
+        "importPath": "src.cli",
+        "description": "src.cli",
+        "isExtraImport": true,
+        "detail": "src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "app_cli",
+        "importPath": "src.cli",
+        "description": "src.cli",
+        "isExtraImport": true,
+        "detail": "src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "check_internet_connection",
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "isExtraImport": true,
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "GOOGLE_SERVER_ADDRESS",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "PORT",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "RETURN_TIME",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "VARIANTS",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "app_cli",
+        "kind": 2,
+        "importPath": "src.cli",
+        "description": "src.cli",
+        "peekOfCode": "def app_cli():\n    print(\"1 --- Проверка наличия подключения к интернету\")\n    print(\"2 --- Проверка наличия установленного межсетвоего экрана\")\n    print(\"3 --- Проверка работоспособности межсетевого экрана\")\n    print(\"4 --- Проверка наличия установленного антивирусного ПО\")\n    print(\"5 --- Проверка наличия работоспособности антивирусного ПО\")\n    print(\"0 --- Выход из программы\")",
+        "detail": "src.cli",
+        "documentation": {}
+    },
+    {
+        "label": "decision_handler",
+        "kind": 2,
+        "importPath": "src.decision_handler",
+        "description": "src.decision_handler",
+        "peekOfCode": "def decision_handler(variant: int) -> None:\n    if not variant_validate:\n        invalid_variant_handler()\n        return\n    match variant:\n        case 0:\n            exit(0)\n        case 1:\n            check_internet_connection()\n        case 2:",
+        "detail": "src.decision_handler",
+        "documentation": {}
+    },
+    {
+        "label": "check_internet_connection",
+        "kind": 2,
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "peekOfCode": "def check_internet_connection() -> None:\n    conn_data = (GOOGLE_SERVER_ADDRESS, PORT)\n    try:\n        socket.create_connection(conn_data, timeout=3)\n        print(\"Подлючение к интернету установлено\")\n    except OSError: ## Ошибки, связанные с веб-взаимодействием\n        print(\"Подключение к интернету отсутствует\")\n    finally:\n        time.sleep(RETURN_TIME)\n        app_cli()",
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "check_installed_antivirus",
+        "kind": 2,
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "peekOfCode": "def check_installed_antivirus():\n    ...",
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "variant_validate",
+        "kind": 2,
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "peekOfCode": "def variant_validate(variant) -> bool:\n    return isinstance(variant, int) and variant in VARIANTS\ndef invalid_variant_handler():\n    print(\"Выбранной опции не существует\")\n    try:\n        is_exit = int(input(\"Хотите выйти? Введите 0 или 1 (0 - Нет, 1 - да)\"))\n        if is_exit:\n            exit()\n        else:\n            app_cli()",
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "invalid_variant_handler",
+        "kind": 2,
+        "importPath": "src.utils",
+        "description": "src.utils",
+        "peekOfCode": "def invalid_variant_handler():\n    print(\"Выбранной опции не существует\")\n    try:\n        is_exit = int(input(\"Хотите выйти? Введите 0 или 1 (0 - Нет, 1 - да)\"))\n        if is_exit:\n            exit()\n        else:\n            app_cli()\n    except TypeError:\n        invalid_variant_handler()",
+        "detail": "src.utils",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    app_cli()\nif __name__ == \"__main__\":\n    main()",
+        "detail": "main",
+        "documentation": {}
+    }
+]
