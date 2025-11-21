@@ -2,7 +2,7 @@ VARIANTS=[1, 2, 3, 4, 5, 0]
 GOOGLE_SERVER_ADDRESS="8.8.8.8"
 PORT=53
 RETURN_TIME=1 ## Задержка после выполнения некоторых функций
-ANTIVIRUS_LIST = [
+ANTIVIRUS_LIST=[
     "avast",
     "avg",
     "kaspersky",
@@ -17,3 +17,10 @@ ANTIVIRUS_LIST = [
     "eset"
 ]
 WMI_NAMESPACE="root\SecurityCenter2"
+WINDOWS_FIREWALL_PROFILES_RUS_ENG=[
+    "профиль домена", 
+    "domainprofile",
+    "частный профиль", 
+    "privateprofile",
+    "публичный профиль", 
+    "publicprofile"]

@@ -230,6 +230,14 @@
         "documentation": {}
     },
     {
+        "label": "check_installed_firewall",
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "isExtraImport": true,
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -245,6 +253,15 @@
         "importPath": "psutil",
         "description": "psutil",
         "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
         "documentation": {}
     },
     {
@@ -290,6 +307,14 @@
     },
     {
         "label": "WMI_NAMESPACE",
+        "importPath": "src.const",
+        "description": "src.const",
+        "isExtraImport": true,
+        "detail": "src.const",
+        "documentation": {}
+    },
+    {
+        "label": "WINDOWS_FIREWALL_PROFILES_RUS_ENG",
         "importPath": "src.const",
         "description": "src.const",
         "isExtraImport": true,
@@ -637,15 +662,6 @@
         "documentation": {}
     },
     {
-        "label": "ANTIVIRUS_LIST",
-        "kind": 5,
-        "importPath": "src.const",
-        "description": "src.const",
-        "peekOfCode": "ANTIVIRUS_LIST = [\n    \"avast\",\n    \"avg\",\n    \"kaspersky\",\n    \"mcafee\",\n    \"defender\",\n    \"bitdefender\",\n    \"360se\",\n    \"norton\",\n    \"nis\",",
-        "detail": "src.const",
-        "documentation": {}
-    },
-    {
         "label": "decision_handler",
         "kind": 2,
         "importPath": "src.decision_handler",
@@ -669,6 +685,15 @@
         "importPath": "src.funcs",
         "description": "src.funcs",
         "peekOfCode": "def check_installed_antivirus() -> None:\n    ## Случай 1. Антивирус -- активный процесс\n    for process in psutil.process_iter([\"name\"]):\n        name = process.info[\"name\"].lower()\n        if any(av_process_name_part in name for av_process_name_part in ANTIVIRUS_LIST):\n            print(f\"Антивирус {process.info[\"name\"]} установлен и находится во включенном состоянии\")\n            time.sleep(RETURN_TIME)\n            return\n    ## Случай 2. Антивирус не включён. Проверка на нахождение в системе\n    if platform.system() == \"Windows\":",
+        "detail": "src.funcs",
+        "documentation": {}
+    },
+    {
+        "label": "check_installed_firewall",
+        "kind": 2,
+        "importPath": "src.funcs",
+        "description": "src.funcs",
+        "peekOfCode": "def check_installed_firewall() -> None:\n    if platform.system() == \"Windows\":\n        try:\n            res = subprocess.run(\n                [\"netsh\", \"advfirewall\", \"show\", \"allprofiles\"],\n                capture_output=True,\n                text=True\n            )\n            output = res.stdout.lower()\n            if any(profile in output for profile in WINDOWS_FIREWALL_PROFILES_RUS_ENG):",
         "detail": "src.funcs",
         "documentation": {}
     },

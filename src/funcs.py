@@ -1,5 +1,6 @@
 import socket
 import psutil
+import shutil
 import time
 import platform
 import wmi
@@ -9,7 +10,8 @@ from src.const import (
     PORT, 
     RETURN_TIME,
     ANTIVIRUS_LIST,
-    WMI_NAMESPACE
+    WMI_NAMESPACE,
+    WINDOWS_FIREWALL_PROFILES_RUS_ENG
 )
 from src.cli import app_cli
 
@@ -65,3 +67,38 @@ def check_installed_antivirus() -> None:
             return
         
         print("Установленные антивирусы:" *av_list)
+
+
+def check_installed_firewall() -> None:
+    if platform.system() == "Windows":
+        try:
+            res = subprocess.run(
+                ["netsh", "advfirewall", "show", "allprofiles"],
+                capture_output=True,
+                text=True
+            )
+
+            output = res.stdout.lower()
+
+            if any(profile in output for profile in WINDOWS_FIREWALL_PROFILES_RUS_ENG):
+                print("Файервол установлен в системе")
+                return
+            
+            print("Файервол не установлен в системе")
+        
+        except Exception as e:
+            print(f"Ошибка при проверке наличия файервола -- {e}")
+            return
+     
+
+    
+    elif platform.system == "Linux":
+        try:
+            if shutil.which("ufw") or shutil.which("iptables") or shutil.which("nft"):
+                print("Файервол установлен в системе")
+            else:
+                print("Файервол не установен в системе")
+            return
+        except Exception as e:
+            print(f"Ошибка при проверке наличия файервола -- {e}")
+            return
