@@ -12,7 +12,7 @@ from src.funcs import (
 from src.print_results import print_results
 from src.utils import invalid_variant_handler, variant_validate
 
-check_results: str = ""  ## TODO: Сохранение сюда всех результатов и вывод их.
+check_results: str = ""
 
 
 def decision_handler(variant: int) -> None:

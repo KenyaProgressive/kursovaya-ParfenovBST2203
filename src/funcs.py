@@ -60,9 +60,9 @@ def check_installed_antivirus() -> str:
         import wmi
 
         av_list = []
-        data = wmi.WMI(name=WMI_NAMESPACE)
-        for av_name in data.AntiVirusProduct():
-            av_list.append(av_name)
+        data = wmi.WMI(namespace=WMI_NAMESPACE)
+        for av in data.AntiVirusProduct():
+            av_list.append(av.displayName)
 
         if not av_list:
             res += "Антивирус не установлен в системе\n"
@@ -102,6 +102,7 @@ def check_installed_firewall() -> str:
                 ["netsh", "advfirewall", "show", "allprofiles"],
                 capture_output=True,
                 text=True,
+                encoding="cp866"
             )
 
             output = result.stdout.lower()
@@ -139,7 +140,7 @@ def check_installed_firewall() -> str:
 def check_work_antivirus(before_check: int = 3) -> str:
     res = ""
 
-    test_file = os.path.join(tempfile.gettempdir(), "test_file.txt")
+    test_file = os.path.join(tempfile.gettempdir(), "virus.txt")
 
     with open(test_file, "w") as file:
         file.write(EICAR_STRING)

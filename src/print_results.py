@@ -21,7 +21,7 @@ def print_results(results: str) -> None:
 
 
 def write_results_to_file(results: str, filename: str = RESULTS_FILE_NAME) -> None:
-    with open(filename, "w") as f:
+    with open(filename, "w", encoding="utf-8") as f:
         f.write("=== РЕЗУЛЬТАТЫ РАБОТЫ ===\n")
         f.write(results)
         f.write(f"\nПроверка проведена: {pretty_time(datetime.now())}")
