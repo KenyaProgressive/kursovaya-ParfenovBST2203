@@ -12,7 +12,5 @@ def invalid_variant_handler():
         is_exit = int(input("Хотите выйти? Введите 0 или 1 (0 - Нет, 1 - да)"))
         if is_exit:
             exit()
-        else:
-            app_cli()
     except TypeError:
         invalid_variant_handler()

@@ -3,9 +3,14 @@ from src.decision_handler import decision_handler
 
 
 def main():
-    app_cli()
-    variant = input("Введите опцию из списка: ")
-    decision_handler(variant)
+    variant: int = -1
+
+    while variant != 0:
+        app_cli()
+        variant = int(input("Введите опцию из списка: "))
+        print()
+        decision_handler(variant)
+
 
 if __name__ == "__main__":
     main()

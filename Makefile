@@ -2,4 +2,5 @@ run:
 	python -B main.py
 
 pretty:
-	isort .
+	isort main.py src/
+	black main.py src/
