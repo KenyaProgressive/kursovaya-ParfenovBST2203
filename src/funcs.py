@@ -40,21 +40,7 @@ def check_internet_connection() -> str:
 
 
 def check_installed_antivirus() -> str:
-
     res: str = ""
-    ## Случай 1. Антивирус -- активный процесс
-
-    for process in psutil.process_iter(["name"]):
-        name = process.info["name"].lower()
-        if any(av_process_name == name for av_process_name in ANTIVIRUS_LIST):
-            res += f"Антивирус {process.info["name"]} установлен и находится во включенном состоянии\n"
-            print(
-                f"Антивирус {process.info["name"]} установлен и находится во включенном состоянии"
-            )
-            time.sleep(RETURN_TIME)
-            return res
-
-    ## Случай 2. Антивирус не включён. Проверка на нахождение в системе
 
     if platform.system() == "Windows":
         import wmi
