@@ -137,10 +137,10 @@ def check_installed_firewall() -> str:
             return res
 
 
-def check_work_antivirus(before_check: int = 3) -> str:
-    res = ""
+def check_work_antivirus(before_check: int = 5) -> str:
+    res: str = ""
 
-    test_file = os.path.join(tempfile.gettempdir(), "virus.txt")
+    test_file: str = "virus.txt"
 
     with open(test_file, "w") as file:
         file.write(EICAR_STRING)
